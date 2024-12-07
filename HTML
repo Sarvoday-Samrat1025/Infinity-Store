@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Store</title>
+    <link rel="icon" href="logo.icon.jpeg" type="image/x-icon">
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            margin: 0;
+            display: inline-block;
+        }
+        nav {
+            float: right;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo border">Infinity Store</div>
+
+            
+            <div>
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+            <nav>
+                <a href="#"> Deliver to India</a>
+                <a href="#">Login in</a>
+                <a href="#">Sign in</a>
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">Products</a>
+                <a href="#order">Order</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="cart">Cart (<span id="cart-count">0</span>)</a>
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+         
+        <button onclick="scrollToProducts()">Shop Now</button>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <h2>Shop by Categories</h2>
+        <div class="category-list">
+            <div class="category">Electronics</div>
+            <div class="category">Fashion</div>
+            <div class="category">Home Appliances</div>
+            <div class="category">Beauty Products</div>
+            <div class="category">Books</div>
+            <div class="category">Sports</div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="products">
+        <h2>Featured Products</h2>
+        <div class="product-list">
+            <div class="product" data-id="1" data-name="Smartphone" data-price="28000">
+                <img src="samrt_phone.jpg" alt="Smartphone">
+                <h3>Smartphone</h3>
+                <p> Rs 28000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2" data-name="Washing Machine" data-price="32000">
+                <img src="washing-machine.jpg" alt="Washing Machine">
+                <h3>Washing Machine</h3>
+                <p>Rs 32000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="3" data-name="T-Shirt" data-price="1000">
+                <img src="t-shirt.jpg" alt="T-Shirt">
+                <h3>T-Shirt</h3>
+                <p>Rs 1000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="4" data-name="Laptop" data-price="56000">
+                <img src="laptopp.jpg" alt="Laptop">
+                <h3>Laptop</h3>
+                <p>Rs 56000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="1" data-name="Smartphone" data-price="64000">
+                <img src="apple.jpg" alt="Smartphone">
+                <h3>Smartphone</h3>
+                <p>Rs 64000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2" data-name="Laptop" data-price="65000">
+                <img src="laptop.jpg" alt="Laptop">
+                <h3>Laptop</h3>
+                <p>Rs 30000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="3" data-name="Smart Watch" data-price="300">
+                <img src="smartwatchh.jpg" alt="Smart Watch">
+                <h3>Smart Watch</h3>
+                <p>Rs 3300</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+    
+            <!-- Fashion -->
+            <div class="product" data-id="4" data-name="Men's Jacket" data-price="120">
+                <img src="jacket.jpg" alt="Men's Jacket">
+                <h3>Men's Jacket</h3>
+                <p>Rs 2120</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="5" data-name="Women's Handbag" data-price="80">
+                <img src="hand-bag.jpg" alt="Women's Handbag">
+                <h3>Women's Handbag</h3>
+                <p>Rs 5000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="6" data-name="Sneakers" data-price="100">
+                <img src="sneaker.jpg" alt="Sneakers">
+                <h3>Sneakers</h3>
+                <p>Rs 7000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+    
+            <!-- Home Appliances -->
+            <div class="product" data-id="7" data-name="Refrigerator" data-price="800">
+                <img src="refrigrator.jpg" alt="Refrigerator">
+                <h3>Refrigerator</h3>
+                <p>Rs 16000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="8" data-name="Microwave Oven" data-price="250">
+                <img src="microwave.jpg" alt="Microwave Oven">
+                <h3>Microwave Oven</h3>
+                <p>Rs 15000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="9" data-name="Vacuum Cleaner" data-price="150">
+                <img src="vaccum.jpg" alt="Vacuum Cleaner">
+                <h3>Vacuum Cleaner</h3>
+                <p>Rs 3000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+    
+            <!-- Beauty Products -->
+            <div class="product" data-id="10" data-name="Lipstick Set" data-price="40">
+                <img src="lipstick.jpg" alt="Lipstick Set">
+                <h3>Lipstick Set</h3>
+                <p>Rs 500</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="11" data-name="Skincare Kit" data-price="100">
+                <img src="skin.jpg" alt="Skincare Kit">
+                <h3>Skincare Kit</h3>
+                <p>Rs 800</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="12" data-name="Perfume" data-price="60">
+                <img src="perfume.jpg" alt="Perfume">
+                <h3>Perfume</h3>
+                <p>Rs 500</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+    
+            <!-- Books -->
+            <div class="product" data-id="13" data-name="Novel: The Great Adventure" data-price="20">
+                <img src="novel.jpg" alt="Novel">
+                <h3>Novel: The Great Adventure</h3>
+                <p>Rs 300</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="14" data-name="Cookbook" data-price="30">
+                <img src="cookbook.jpg" alt="Cookbook">
+                <h3>Cookbook</h3>
+                <p>Rs 650</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="15" data-name="History Book" data-price="25">
+                <img src="history.jpg" alt="History Book">
+                <h3>History Book</h3>
+                <p>Rs 1300</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="16" data-name="Gaming Console" data-price="500">
+                <img src="gamming.jpg" alt="Gaming Console">
+                <h3>Gaming Console</h3>
+                <p> Rs 2800</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="17" data-name="Bluetooth Speaker" data-price="120">
+                <img src="bluthoth.jpg" alt="Bluetooth Speaker">
+                <h3>Bluetooth Speaker</h3>
+                <p>Rs 320</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="18" data-name="Wireless Earbuds" data-price="80">
+                <img src="earbudds.jpg" alt="Wireless Earbuds">
+                <h3>Wireless Earbuds</h3>
+                <p>Rs 900</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+    
+            <!-- Kids -->
+            <div class="product" data-id="19" data-name="Toy Car" data-price="30">
+                <img src="toy.jpg" alt="Toy Car">
+                <h3>Toy Car</h3>
+                <p>Rs 330</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="20" data-name="Building Blocks Set" data-price="50">
+                <img src="building.jpg" alt="Building Blocks">
+                <h3>Building Blocks Set</h3>
+                <p>Rs 400</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+
+    <footer class="footer">
+        <div class="back-to-top">
+            <a href="#top">Back to top</a>
+        </div>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">Amazon Cares</a></li>
+                    <li><a href="#">Gift a Smile</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect with Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <ul>
+                    <li><a href="#">Sell on Infinity Store</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                    <li><a href="#">Fulfillment by Infinity Store</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Returns Centre</a></li>
+                    <li><a href="#">100% Purchase Protection</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Infinity Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
